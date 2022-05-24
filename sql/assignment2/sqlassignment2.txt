@@ -1,0 +1,51 @@
+
+
+--Assignment 2
+--1. Retrieve a list of MANAGERS.
+Select Ename from tblemployee
+Where Empno in (Select MGR_id from tblemployee)
+--2. Find out salary of both MILLER and SMITH.
+Select Sal from tblemployee
+Where Ename in ('Smith','Miller')
+--3. Find out the names and salaries of all employees earning more than 1000 per MONTH
+Select Ename,Sal from tblemployee
+Where Sal>1000
+--4. Display the names and salaries of all employees except JAMES.
+Select Ename,Sal from tblemployee
+where Ename !='James'
+--5. Find out the details of employees whose names begin with ‘S’.
+Select * from tblemployee
+Where Ename Like 'S%'
+--6. Find out the names of all employees that have ‘A’ anywhere in their name.
+Select * from tblemployee
+Where Ename like '%A%'
+--7. Find out the names of all employees that have ‘L’ as their third character in their name.
+Select Ename from tblemployee
+Where Ename Like '__L%'
+--8. Find out the names of the employees whose name begin with ‘A’ or ‘M’.
+Select Ename from tblemployee
+Where Ename Like 'A%' Or Ename Like 'M%'
+--9. Compute yearly salary of SMITH.
+Select Sal*12 as "Smith Yearly Sal" from tblemployee
+Where Ename = 'Smith'
+--10. Compute daily salary of JONES.
+Select Sal/30 "Jones daily sal" from tblemployee
+Where Ename='Jones'
+--11. Calculate the total monthly salary of all employees.
+Select Sum(Sal) as "Total sal" from tblemployee
+--12. Print the average annual salary.
+Select Avg(Sal*12) as "Avg Annul salary" from tblemployee
+--13. Select the name, job, salary, department number of all employees except SALESMAN from department number 30.
+Select Ename,Job,Sal,Deptno from tblemployee
+Where Job!='Saleman' And Deptno=30
+Select * from tblemployee
+--14. List unique departments of the EMP table.
+Select Deptno from tblemployee
+Group by Deptno
+--15. List the name and salary of employees who earn more than 1500 and are in department 10 or 30.
+-- Label the columns Employee and Monthly Salary respectively.
+Select Ename as "Employee",Sal as "Monthly salary" from tblemployee
+Where Sal>1500 and Deptno in (10,30)
+
+
+

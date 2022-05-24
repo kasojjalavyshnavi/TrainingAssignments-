@@ -1,0 +1,8 @@
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\bin\Debug\assignment5.exe.config
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\bin\Debug\assignment5.exe
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\bin\Debug\assignment5.pdb
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\obj\Debug\assignment5.csproj.AssemblyReference.cache
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\obj\Debug\assignment5.csproj.SuggestedBindingRedirects.cache
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\obj\Debug\assignment5.csproj.CoreCompileInputs.cache
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\obj\Debug\assignment5.exe
+C:\dotnet assignments\c#\assignment4 new\assignment5\assignment5\obj\Debug\assignment5.pdb

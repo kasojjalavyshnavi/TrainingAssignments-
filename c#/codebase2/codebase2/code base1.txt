@@ -1,0 +1,46 @@
+use sql02;
+create table Emptble(
+Empid int not null,
+Name varchar(60),
+Salary int,
+Deptno int);
+insert into Emptble values(1,'vyshnavi',2000,10);
+insert into Emptble values(2,'rani',22000,20);
+insert into Emptble values(3,'srija',60000,30);
+select * from Emptble;
+
+
+
+
+Declare @dateofbirth datetime
+Declare @presentdatetime datetime
+Declare @years varchar(4)
+set @dateofbirth = '1998-02-11' --Birthdate
+set @presentdatetime = getdate() --Current Datetime
+select @years = datediff(year,@dateofbirth,@presentdatetime)
+select @years + ' years,' as years
+
+
+use sql02;
+create table Emptble(
+Empid int not null,
+Name varchar(60),
+Salary int,
+Deptno int);
+insert into Emptble values(1,'vyshnavi',2000,10);
+insert into Emptble values(2,'rani',22000,20);
+insert into Emptble values(3,'srija',60000,30);
+select * from Emptble;
+
+
+
+
+Declare @dateofbirth datetime
+Declare @presentdatetime datetime
+Declare @years varchar(4)
+set @dateofbirth = '1998-02-11' --Birthdate
+set @presentdatetime = getdate() --Current Datetime
+select @years = datediff(year,@dateofbirth,@presentdatetime)
+select @years + ' years,' as years
+
+

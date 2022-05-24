@@ -1,0 +1,8 @@
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\bin\Debug\codebase2.exe.config
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\bin\Debug\codebase2.exe
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\bin\Debug\codebase2.pdb
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\obj\Debug\codebase2.csproj.AssemblyReference.cache
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\obj\Debug\codebase2.csproj.SuggestedBindingRedirects.cache
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\obj\Debug\codebase2.csproj.CoreCompileInputs.cache
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\obj\Debug\codebase2.exe
+C:\dotnet assignments\c#\codebase2\codebase2\codebase2\obj\Debug\codebase2.pdb
