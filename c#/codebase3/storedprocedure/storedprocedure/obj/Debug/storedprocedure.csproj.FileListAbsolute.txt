@@ -1,0 +1,8 @@
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\bin\Debug\storedprocedure.exe.config
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\bin\Debug\storedprocedure.exe
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\bin\Debug\storedprocedure.pdb
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\obj\Debug\storedprocedure.csproj.AssemblyReference.cache
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\obj\Debug\storedprocedure.csproj.SuggestedBindingRedirects.cache
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\obj\Debug\storedprocedure.csproj.CoreCompileInputs.cache
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\obj\Debug\storedprocedure.exe
+C:\assignments\c#\codebase3\storedprocedure\storedprocedure\obj\Debug\storedprocedure.pdb
