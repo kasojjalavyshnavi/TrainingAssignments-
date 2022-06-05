@@ -1,12 +1,21 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace casestudy1
+using System.Data.SqlClient;
+namespace casestudy
 {
-    internal class SQL
+    public class SQLConnection
     {
+        public static SqlConnection con;
+        public static SqlConnection getcon()
+        {
+            con = new SqlConnection("data source = ADMW46ZLPC1570\\SQLEXPRESS; Initial catalog = ZensarDB; " + "user id= sa; password = Temp1234");
+            con.Open();
+            return con;
+        }
     }
 }
+

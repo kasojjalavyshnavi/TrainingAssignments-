@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace casestudy1
 {
@@ -51,39 +52,153 @@ namespace casestudy1
         //    {
         //        return this.enrolls;
         //    }
-        List<Student> students;
-        List<Course> courses;
-        List<Enroll> enrolls;
-        public AppEngine()
-        {
-            this.students = new List<Student>();
-            this.courses = new List<Course>();
-            this.enrolls = new List<Enroll>();
-        }
+        /* List<Student> students;
+
+         List<Course> courses;
+         List<Enroll> enrolls;
+         public AppEngine()
+         {
+             this.students = new List<Student>();
+             this.courses = new List<Course>();
+             this.enrolls = new List<Enroll>();
+         }
+         public void introduce(Course course)
+         {
+             courses.Add(course);
+         }
+         public void register(Student student)
+         {
+             students.Add(student);
+         }
+         public List<Student> listOfStudents()
+         {
+             return students;
+         }
+         public List<Course> listOfCourses()
+         {
+             return courses;
+         }
+         public void enroll(Student student, Course course)
+         {
+             Enroll e = new Enroll(student, course, new DateTime());
+             this.enrolls.Add(e);
+         }
+         public List<Enroll> listOfEnrollments()
+         {
+             return enrolls;
+         }*/
+
+        // casestudy4 \\
+
         public void introduce(Course course)
         {
-            courses.Add(course);
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            try
+            {
+                con = SQLConnection.getcon();
+                cmd = new SqlCommand("insert into Course values(@cid,@cname,@cdur,@fee)", con);
+                cmd.Parameters.AddWithValue("@cid", course.Id);
+                cmd.Parameters.AddWithValue("@cname", course.Name);
+                cmd.Parameters.AddWithValue("@cdur", course.duration);
+                cmd.Parameters.AddWithValue("@fee", course.fees);
+                int result = cmd.ExecuteNonQuery();
+                Console.WriteLine("Value Updated");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+           
         }
-        public void register(Student student)
-        {
-            students.Add(student);
+            public void register(Student student)
+            {
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            try
+            {
+                con = SQLConnection.getcon();
+                cmd = new SqlCommand("insert into Student values(@sid,@sname,@dob)", con);
+                cmd.Parameters.AddWithValue("@sid", student.StudentId);
+                cmd.Parameters.AddWithValue("@sname", student.StudentName);
+                cmd.Parameters.AddWithValue("@dob", student.DateOfBirth);
+                int result = cmd.ExecuteNonQuery();
+                Console.WriteLine("Value Updated");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
-        public List<Student> listOfStudents()
-        {
-            return students;
-        }
-        public List<Course> listOfCourses()
-        {
-            return courses;
-        }
+            
         public void enroll(Student student, Course course)
         {
-            Enroll e = new Enroll(student, course, new DateTime());
-            this.enrolls.Add(e);
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            try
+            {
+                string dt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                con = SQLConnection.getcon();
+                cmd = new SqlCommand("insert into Enroll values(@sid,@cid,@doe)", con);
+                cmd.Parameters.AddWithValue("@sid", student.StudentId);
+                cmd.Parameters.AddWithValue("@cid", course.Id);
+                cmd.Parameters.AddWithValue("@doe", dt);
+                int result = cmd.ExecuteNonQuery();
+                Console.WriteLine("Value Updated");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
-        public List<Enroll> listOfEnrollments()
+        public Student GetStudentById(int sid)
         {
-            return enrolls;
+            Student student = null;
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr;
+            con = SQLConnection.getcon();
+            cmd = new SqlCommand("select * from Student where studentId=@sid", con);
+            cmd.Parameters.AddWithValue("@sid", sid);
+            dr = cmd.ExecuteReader();
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    student = new Student((int)dr["studentId"], (string)dr["studentName"], (string)dr["dateOfBirth"]);
+                }
+            }
+            con.Close();
+            return student;
+        }
+        public Course GetCourseById(int cid)
+        {
+            Course course = null;
+            SqlConnection con = null;
+            SqlCommand cmd = null;
+            SqlDataReader dr;
+            con = SQLConnection.getcon();
+            cmd = new SqlCommand("select * from Course where Id=@cid", con);
+            cmd.Parameters.AddWithValue("@cid", cid);
+            dr = cmd.ExecuteReader();
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    course = new Course((int)dr["Id"], (string)dr["Name"], (int)dr["duration"], Convert.ToDouble(dr["fees"]));
+                }
+            }
+            con.Close();
+            return course;
         }
     }
 }
+

@@ -56,7 +56,7 @@ namespace StoredProcedure
         public static void display()
         {
             con = getCon();
-            cmd = new SqlCommand("select * from Code_Employee");
+            cmd = new SqlCommand("select * from Code__Employee");
             cmd.Connection = con;
             dr = cmd.ExecuteReader();
             while (dr.Read())
@@ -70,7 +70,7 @@ namespace StoredProcedure
         }
         public static void Main(string[] args)
         {
-            select();
+            //select();
             display();
             Console.Read();
         }
