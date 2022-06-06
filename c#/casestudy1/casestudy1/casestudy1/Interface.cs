@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-namespace casestudy
+namespace casestudy1
 {
     public interface UserInterface
     {
@@ -24,7 +24,8 @@ namespace casestudy
     class Sms :UserInterface
     {
         AppEngine appengine;
-       
+        private string ans;
+
         public Sms()
         {
             this.appengine = new AppEngine();
@@ -46,6 +47,11 @@ namespace casestudy
                     showAdminScreen();
                     break;
             }
+            Console.WriteLine("Do you want to continue in Main Screen : Yes or No ");
+            ans = Console.ReadLine();
+
+
+         while ((ans == "yes") || (ans== "Yes") || (ans== "y") || (ans== "Y"));
         }
         public void showStudentScreen()
         {
@@ -64,7 +70,7 @@ namespace casestudy
                     showAllStudentsScreen();
                     break;
                 default:
-                    Console.WriteLine("please enter valid input");
+                    Console.WriteLine("Please Enter The  Valid Input");
                     showStudentScreen();
                     break;
 
@@ -75,8 +81,7 @@ namespace casestudy
         public void showAdminScreen()
         {
             Console.WriteLine("Welcome to AdminScreen");
-            Console.WriteLine("Enter  \n1 to introduce new course \n2 to update course details \n3 to Student Enroll  \n4 to view All Enrollments \n5 to  exit");
-            int input = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter  \n1 To introduce new course \n2 To update course details \n3 To Student Enroll  \n4 To view All Enrollments \n5 To  exit");         int input = Convert.ToInt32(Console.ReadLine());
             switch (input)
             {
                 case 1:

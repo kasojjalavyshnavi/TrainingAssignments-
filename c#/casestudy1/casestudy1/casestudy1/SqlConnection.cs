@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-namespace casestudy
+namespace casestudy1
 {
     public class SQLConnection
     {
